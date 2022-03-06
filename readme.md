@@ -58,17 +58,16 @@ Cost augmented decoding for this cost function is implemented as another feature
 
 
 
-<img src="https://latex.codecogs.com/svg.latex?\Large&space;L(w,D)=\sum_{i=1}^N((\text{max}\;w f(x_i,y_i') + cost(y_i,y')) - w f(x_i,y_i)) + \frac{\lambda}{2}|w|^2" title="\Large x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}" /> 
+<img src="https://latex.codecogs.com/png.latex?\Large&space;L(w,D)=\sum_{i=1}^N((\text{max}\;w f(x_i,y_i') + cost(y_i,y')) - w f(x_i,y_i)) + \frac{\lambda}{2}|w|^2" title="\Large x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}" /> 
 
 See `svm_gradient` function in `train.py` for details.
 
 Hence,
-<img src="https://latex.codecogs.com/svg.latex?\Large&space;y'=\text{argmax}_{y'\in Y} \; w f(x_i,y_i') + cost(y_i,y'))" title="\Large x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}" /> 
+<img src="https://latex.codecogs.com/png.latex?\Large&space;y'=\text{argmax}_{y'\in Y} \; w f(x_i,y_i') + cost(y_i,y'))" title="\Large x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}" /> 
 
 See `svm_optimizer` function in `optimizers.py` for details.
 
-<img src="https://latex.codecogs.com/svg.latex?\Large&space;w = w - \alpha g(x,y) - \alpha\lambda w" title="\Large x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}" /> 
-
+<img src="https://latex.codecogs.com/png.latex?\Large&space;w = w - \alpha g(x,y) - \alpha\lambda w" title="\Large x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}" /> 
 
 
 ## Structured SVM with modified cost function
