@@ -38,17 +38,17 @@ Training with the structured perceptron loss function is done using stochastic s
 
 See `sgd_optimizer` function in `optimizers.py` for details.
 
-<img src="https://latex.codecogs.com/svg.latex?\Large&space;w = w - \alpha g(x,y)" title="\Large x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}" /> 
+<img src="https://latex.codecogs.com/svg.latex?\Large&space;w = w - \alpha g(x,y)" title="ssgd" /> 
 
 
 ### Adagrad
 
 Adagrad is implemented the same as SSGD, but with a modified equation for updating the parameters. Like SSGD, each gradient update is called a time step. Let t count the number of gradient updates that have been performed (and does not reset after each epoch.) Let gt,i be the ith component of the gradient at time step t. We keep a running total of the sum of squares of all the components of all the previous gradients: st,i. This includes gradients from all previous epochs. At time step t, the ith parameter θt,i is updated like so:
 
-<img src="https://latex.codecogs.com/svg.latex?\Large&space;\theta_{t,i}=\theta_{t-1,i}-\frac{\alpha}{\sqrt{s_{t,i}}}g_{t,i}" title="\Large x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}" /> 
+<img src="https://latex.codecogs.com/svg.latex?\Large&space;\theta_{t,i}=\theta_{t-1,i}-\frac{\alpha}{\sqrt{s_{t,i}}}g_{t,i}" title="ada1" /> 
 
 where, 
-<img src="https://latex.codecogs.com/svg.latex?\Large&space;s_{t,i} = \sum^t_{T=1} g^2_{T,i}" title="\Large x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}" />
+<img src="https://latex.codecogs.com/svg.latex?\Large&space;s_{t,i} = \sum^t_{T=1} g^2_{T,i}" title="ada" />
 
 See `adagrad_optimizer` function in `optimizers.py` for details.
 
@@ -58,16 +58,16 @@ Cost augmented decoding for this cost function is implemented as another feature
 
 
 
-<img src="https://latex.codecogs.com/png.latex?\Large&space;L(w,D)=\sum_{i=1}^N((\text{max}\;w f(x_i,y_i') + cost(y_i,y')) - w f(x_i,y_i)) + \frac{\lambda}{2}|w|^2" title="\Large x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}" /> 
+<img src="https://latex.codecogs.com/png.latex?\Large&space;L(w,D)=\sum_{i=1}^N((\text{max}\;w f(x_i,y_i') + cost(y_i,y')) - w f(x_i,y_i)) + \frac{\lambda}{2}|w|^2" title="svm" /> 
 
 See `svm_gradient` function in `train.py` for details.
 
 Hence,
-<img src="https://latex.codecogs.com/png.latex?\Large&space;y'=\text{argmax}_{y'\in Y} \; w f(x_i,y_i') + cost(y_i,y'))" title="\Large x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}" /> 
+<img src="https://latex.codecogs.com/png.latex?\Large&space;y'=\text{argmax}_{y'\in Y} \; w f(x_i,y_i') + cost(y_i,y'))" title="svm2" /> 
 
 See `svm_optimizer` function in `optimizers.py` for details.
 
-<img src="https://latex.codecogs.com/png.latex?\Large&space;w = w - \alpha g(x,y) - \alpha\lambda w" title="\Large x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}" /> 
+<img src="https://latex.codecogs.com/png.latex?\Large&space;w = w - \alpha g(x,y) - \alpha\lambda w" title="svm3}" /> 
 
 
 ## Structured SVM with modified cost function
